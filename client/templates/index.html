@@ -12,14 +12,14 @@
 </head>
 <body>
 
-<div>
-    <p>PLAY</p>
+<div class="starting-page">
+    <a href="#in-game" class="starting-button">PLAY</a>
 </div>
 
-<div class="in-game">
+<div id="in-game">
     <form name="quizz" onsubmit="return submitQuizz()">
 
-        <div class="question1">
+        <div class="questions question1">
             <div class="question-number">1/8</div>
             <div class="question">
                 <img src="../../backend/resources/img1.gif" alt="gif1">
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <div class="question2">
+        <div class="questions question2 hide">
             <div class="question-number">2/8</div>
             <div class="question">
                 <img src="../../backend/resources/img2.gif" alt="gif2">
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div class="question3">
+        <div class="questions question3 hide">
             <div class="question-number">3/8</div>
             <div class="question">
                 <img src="../../backend/resources/img3.gif" alt="gif3">
@@ -103,7 +103,7 @@
             </div>
         </div>
 
-        <div class="question4">
+        <div class="questions question4 hide">
             <div class="question-number">4/8</div>
             <div class="question">
                 <img src="../../backend/resources/img4.gif" alt="gif4">
@@ -131,7 +131,7 @@
             </div>
         </div>
 
-        <div class="question5">
+        <div class="questions question5 hide">
             <div class="question-number">5/8</div>
             <div class="question">
                 <img src="../../backend/resources/img5.gif" alt="gif5">
@@ -155,7 +155,7 @@
             </div>
         </div>
 
-        <div class="question6">
+        <div class="questions question6 hide">
             <div class="question-number">6/8</div>
             <div class="question">
                 <img src="../../backend/resources/img6.gif" alt="gif6">
@@ -183,7 +183,7 @@
             </div>
         </div>
 
-        <div class="question7">
+        <div class="questions question7 hide">
             <div class="question-number">7/8</div>
             <div class="question">
                 <img src="../../backend/resources/img7.gif" alt="gif7">
@@ -211,7 +211,7 @@
             </div>
         </div>
 
-        <div class="question8">
+        <div class="questions question8 hide">
             <div class="question-number">8/8</div>
             <div class="question">
                 <img src="../../backend/resources/img8.gif" alt="gif8">
