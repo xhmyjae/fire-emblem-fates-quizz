@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #546A7B;
+}
+
+.in-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+
+.question-number {
+    color: #FDFDFF;
+    font-weight: bold;
+    font-size: 3vh;
+    /*text-shadow: 0.1vw 0vw 0.25vw #181817, 0.15vw 0vw 0.25vw #272726, 0.1vw 0vw 0.1vw #272726;*/
+}
+
+.question > img {
+    width: 10vh;
+}
+
+.question > div {
+    background-color: #C6C5B9;
+    width: 64vh;
+    padding: 1.5vh;
+    margin-left: 3vh;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    background-color: #62929E;
+    padding: 2vh;
+}

@@ -8,6 +8,7 @@
     <meta name="description" content="A quizz about Fire Emblem Fates.">
     <title>Fire Emblem Fates Quizz</title>
 
+    <link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
 
@@ -16,15 +17,229 @@
 </div>
 
 <div class="in-game">
-    <div class="question-number">1/8</div>
-    <div class="question">
-        <img src="../../backend/resources/img1.gif" alt="gif1">
-        <div>
-            <p>What is the name of the main character?</p>
-        </div>
-    </div>
-    <div class="answers">
+    <form name="quizz" onsubmit="return submitQuizz()">
 
+        <div class="question1">
+            <div class="question-number">1/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img1.gif" alt="gif1">
+                <div>
+                    <p>What is the name of the main character?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="radio" name="answerQ1" value="correct" id="answer1Q1">
+                <span>Corrin</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ1" value="false" id="answer2Q1">
+                <span>Lucina</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ1" value="false" id="answer3Q1">
+                <span>Robin</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ1" value="false" id="answer4Q1">
+                <span>Roy</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question2">
+            <div class="question-number">2/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img2.gif" alt="gif2">
+                <div>
+                    <p>When was the game first released?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="radio" name="answerQ2" value="false" id="answer1Q2">
+                <span>2013</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ2" value="false" id="answer2Q2">
+                <span>2014</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ2" value="correct" id="answer3Q2">
+                <span>2015</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ2" value="false" id="answer4Q2">
+                <span>2016</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question3">
+            <div class="question-number">3/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img3.gif" alt="gif3">
+                <div>
+                    <p>How many story path are there?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="radio" name="answerQ3" value="false" id="answer1Q3">
+                <span>2</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ3" value="correct" id="answer2Q3">
+                <span>3</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ3" value="false" id="answer3Q3">
+                <span>1</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ3" value="false" id="answer4Q3">
+                <span>4</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question4">
+            <div class="question-number">4/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img4.gif" alt="gif4">
+                <div>
+                    <p>Which characters come from the Awakening universe?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="checkbox" name="answerQ4" value="correct" id="answer1Q4">
+                <span>Laslow</span>
+                </label>
+                <label>
+                <input type="checkbox" name="answerQ4" value="correct" id="answer2Q4">
+                <span>Odin</span>
+                </label>
+                <label>
+                <input type="checkbox" name="answerQ4" value="correct" id="answer3Q4">
+                <span>Selena</span>
+                </label>
+                <label>
+                <input type="checkbox" name="answerQ4" value="false" id="answer4Q4">
+                <span>Effie</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question5">
+            <div class="question-number">5/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img5.gif" alt="gif5">
+                <div>
+                    <p>What is the name of the song Azura is well-known for?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="radio" name="answerQ5" value="false" id="answer1Q5">
+                <span>The Lost Dragon sings in the Dark</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ5" value="false" id="answer2Q5">
+                <span>Embrace the Dark</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ5" value="correct" id="answer3Q5">
+                <span>Lost in Thoughts All Alone</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question6">
+            <div class="question-number">6/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img6.gif" alt="gif6">
+                <div>
+                    <p>What is the name of the protagonist's son/daughter?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="radio" name="answerQ6" value="false" id="answer1Q6">
+                <span>Forest</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ6" value="correct" id="answer2Q6">
+                <span>Kana</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ6" value="false" id="answer3Q6">
+                <span>Kiragi</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ6" value="false" id="answer4Q6">
+                <span>Hisame</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question7">
+            <div class="question-number">7/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img7.gif" alt="gif7">
+                <div>
+                    <p>What are the two kingdom's names?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="checkbox" name="answerQ7" value="correct" id="answer1Q7">
+                <span>Hoshido</span>
+                </label>
+                <label>
+                <input type="checkbox" name="answerQ7" value="false" id="answer2Q7">
+                <span>Begnion</span>
+                </label>
+                <label>
+                <input type="checkbox" name="answerQ7" value="correct" id="answer3Q7">
+                <span>Nohr</span>
+                </label>
+                <label>
+                <input type="checkbox" name="answerQ7" value="false" id="answer4Q7">
+                <span>Faerghus</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="question8">
+            <div class="question-number">8/8</div>
+            <div class="question">
+                <img src="../../backend/resources/img8.gif" alt="gif8">
+                <div>
+                    <p>What is the name of the dragon that rules over the Hidden Kingdom of Valla?</p>
+                </div>
+            </div>
+            <div class="answers">
+                <label>
+                <input type="radio" name="answerQ8" value="false" id="answer1Q8">
+                <span>Azura</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ8" value="false" id="answer2Q8">
+                <span>Lilith</span>
+                </label>
+                <label>
+                <input type="radio" name="answerQ8" value="correct" id="answer3Q8">
+                <span>Anankos</span>
+                </label>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="buttons">
+        <div class="previous-button">Previous</div>
+        <div class="next-button">Next</div>
     </div>
 </div>
 
