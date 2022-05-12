@@ -8,7 +8,11 @@
     <meta name="description" content="A quizz about Fire Emblem Fates.">
     <title>Fire Emblem Fates Quizz</title>
 
+    <link rel="icon" href="../../backend/resources/img3.gif">
+    <script src="https://kit.fontawesome.com/74fed0e2b5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style/main.css">
+    <script defer src="../scripts/index.js"></script>
+    <script defer src="../scripts/swipe.js"></script>
 </head>
 <body>
 
@@ -17,9 +21,9 @@
 </div>
 
 <div id="in-game">
-    <form name="quizz" onsubmit="return submitQuizz()">
+    <form name="quizz" id="quizz">
 
-        <div class="questions question1">
+        <div class="questions question1 hide">
             <div class="question-number">1/8</div>
             <div class="question">
                 <img src="../../backend/resources/img1.gif" alt="gif1">
@@ -233,14 +237,20 @@
                 <span>Anankos</span>
                 </label>
             </div>
+            <div class="submit-button">
+                <button type="submit" form="quizz" value="Submit">Finish !</button>
+            </div>
         </div>
 
     </form>
 
     <div class="buttons">
-        <div class="previous-button">Previous</div>
-        <div class="next-button">Next</div>
+        <div class="previous-button"><i class="fa-solid fa-circle-arrow-left"></i></div>
+        <div class="next-button"><i class="fa-solid fa-circle-arrow-right"></i></div>
     </div>
+
+    <div class="score-board"></div>
+
 </div>
 
 </body>

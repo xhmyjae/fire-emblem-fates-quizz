@@ -1,66 +1,70 @@
 class questionnaire
 {
-    constructor(questions, inputAnswers, score) {
+    constructor(questions, correctAnswers, inputAnswers, score) {
         this.questions = questions;
+        this.correctAnswers = correctAnswers;
         this.inputAnswers = inputAnswers;
         this.score = score;
     }
 
-    getCorrectAnswer(questions)
+    getCorrectAnswer()
     {
-        questions.forEach( () => {
-            let inputs = questions.querySelectorAll('input');
-            let inputsArray = Array.from(inputs);
+        this.questions.forEach( question => {
+            let inputs = question.querySelectorAll('input');
+            let arr = [];
 
-            for (let i = 0; i < inputsArray.length; i++) {
-                if (inputsArray[i].value === 'correct') {
-                    questions[i].push(inputsArray[i]);
+            inputs.forEach( input => {
+                if (input.value === 'correct') {
+                    arr.push(input);
                 }
-            }
+            });
+
+            this.correctAnswers[question] = arr;
         });
+        console.log(this.correctAnswers.length);
     }
 
-    checkAnswer(questions, inputAnswers)
+    checkAnswer()
     {
-        questions.forEach( () => {
-            let inputs = questions.querySelectorAll('input');
-            let inputsArray = Array.from(inputs);
+        this.questions.forEach( question => {
+            let inputs = question.querySelectorAll('input');
+            let arr = [];
 
-            for (let i = 0; i < inputsArray.length; i++) {
-                if (inputsArray[i].value === 'correct' && inputsArray[i].checked) {
-                    inputAnswers[i].push(inputsArray[i]);
+            inputs.forEach( input => {
+                if (input.value === 'correct' && input.checked) {
+                    arr.push(input);
+                    console.log(input)
                 }
-            }
-        });
-    }
+            });
 
-    calculateScore(questions, inputAnswers)
+            this.inputAnswers[question] = arr;
+        });
+}
+
+    calculateScore()
     {
-        for (let i = 0; i < questions.length; i++) {
-            if (inputAnswers[i].length === questions[i].length) {
+        for (let i = 0; i < this.correctAnswers.length; i++) {
+            if (this.inputAnswers[i].length === this.correctAnswers[i].length) {
                 this.score++;
             }
         }
     }
 }
 
-let questions = document.querySelectorAll('.questions');
-let next = document.querySelector('.next-button');
-let previous = document.querySelector('.previous-button');
+let quizz = document.getElementById('quizz');
 
-next.addEventListener('click', e => {
-   let currentQuestion = e.target;
+quizz.addEventListener('submit', e => {
+    var q1 = document.forms['quizz']['answer1Q1'].value;
 
-   let question = document.querySelector('.questions:not(.hide)');
+    e.preventDefault();
+    let questions = document.querySelectorAll('.questions');
+
+    let results = new questionnaire(questions, {}, {}, 0);
+    results.getCorrectAnswer();
+    results.checkAnswer();
+    results.calculateScore();
+
+    let score = document.querySelector('.score-board');
+    score.innerHTML = results.score;
 });
 
-questions.forEach(question => {
-    let questionnaire= new questionnaire(question);
-    questionnaire.getCorrectAnswer(question);
-    questionnaire.checkAnswer(question);
-    let score = questionnaire.incrementScore(score);
-});
-
-function submitAnswers() {
-    const total = questionnaire.getCorrectAnswer(questions);
-}
