@@ -67,7 +67,9 @@ quizz.addEventListener('submit', e => {
     results.checkAnswer();
     results.calculateScore();
 
-    let score = document.querySelector('.score-board');
+    let scoreContent = document.querySelector('.score-board');
+    scoreContent.style.display = 'flex';
+    let score = document.querySelector('.score');
     score.innerHTML = results.score;
 });
 

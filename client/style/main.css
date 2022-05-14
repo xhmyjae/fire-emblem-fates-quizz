@@ -100,3 +100,13 @@ body {
 form#quizz {
     height: 40vh;
 }
+
+.score-board {
+    display: none;
+    color: #FDFFFF;
+    font-size: 130%;
+}
+
+.score-text {
+    margin-right: 1vh;
+}
