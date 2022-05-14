@@ -19,9 +19,10 @@ class questionnaire
                 }
             });
 
-            this.correctAnswers[question] = arr;
+            this.correctAnswers[question.className] = arr;
         });
-        console.log(this.correctAnswers.length);
+        console.log(Object.keys(this.correctAnswers).length);
+        console.log(this.correctAnswers);
     }
 
     checkAnswer()
@@ -37,17 +38,19 @@ class questionnaire
                 }
             });
 
-            this.inputAnswers[question] = arr;
+            this.inputAnswers[question.className] = arr;
         });
+        console.log(Object.keys(this.inputAnswers).length);
+        console.log(this.inputAnswers);
 }
 
     calculateScore()
     {
-        for (let i = 0; i < this.correctAnswers.length; i++) {
-            if (this.inputAnswers[i].length === this.correctAnswers[i].length) {
+        this.questions.forEach( question => {
+            if (this.inputAnswers[question.className].length === this.correctAnswers[question.className].length) {
                 this.score++;
             }
-        }
+        });
     }
 }
 
