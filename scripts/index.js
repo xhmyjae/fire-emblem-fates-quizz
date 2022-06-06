@@ -7,6 +7,10 @@ class questionnaire
         this.score = score;
     }
 
+    /**
+     * It loops through each question, finds all the inputs, pushes the correct inputs into an array, and then pushes that
+     * array into an object
+     */
     getCorrectAnswer()
     {
         this.questions.forEach( question => {
@@ -25,6 +29,10 @@ class questionnaire
         console.log(this.correctAnswers);
     }
 
+    /**
+     * It loops through each question, then loops through each input, then pushes the correct inputs into an array, then
+     * pushes that array into an object
+     */
     checkAnswer()
     {
         this.questions.forEach( question => {
@@ -42,8 +50,12 @@ class questionnaire
         });
         console.log(Object.keys(this.inputAnswers).length);
         console.log(this.inputAnswers);
-}
+    }
 
+    /**
+     * If the length of the inputAnswers array is equal to the length of the correctAnswers array, then increment the score
+     * by 1
+     */
     calculateScore()
     {
         this.questions.forEach( question => {
@@ -56,6 +68,11 @@ class questionnaire
 
 let quizz = document.getElementById('quizz');
 
+/* Listening for the submit event on the form, then it is preventing the default action, then it is selecting
+all the questions, then it is creating a new questionnaire object, then it is calling the getCorrectAnswer method, then
+calling the checkAnswer method, then it is calling the calculateScore method, then it is selecting the score-board
+class, then it is setting the display to flex, then it is selecting the score class, then it is setting the innerHTML to
+the score. */
 quizz.addEventListener('submit', e => {
     var q1 = document.forms['quizz']['answer1Q1'].value;
 
@@ -72,4 +89,3 @@ quizz.addEventListener('submit', e => {
     let score = document.querySelector('.score');
     score.innerHTML = results.score;
 });
-
